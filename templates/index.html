@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>
+    customer churn prediction model
+</title>
+</head>
+<body>
+<style >
+
+     body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Additional styling */
+        .input-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+</style>
+
+    <H1>Customer churn prediction</H1>
+    <form  method="post" action="{{ url_for('predict') }}">
+        <input type='number' name='gender' placeholder="Gender">
+        <input type='number' name='SeniorCitizen' placeholder="SeniorCitizen">
+        <input type='number' name='Partner' placeholder="Partner">
+        <input type='number' name='Dependents' placeholder="Dependents">
+        <input type='float' name='tenure' placeholder="tenure">
+        <input type='number' name='PhoneService' placeholder="Phone_Service">
+        <input type='number' name='PaperlessBilling' placeholder="PaperlessBillings">
+        <input type='float' name='MonthlyCharges' placeholder="MonthlyCharges">
+        <input type='float' name='TotalCharges' placeholder="TotalCharges">
+        <input type='number' name='MultipleLines_No' placeholder="MultipleLinesNo">
+        <input type='number' name='MultipleLines_No phone service' placeholder="No Multiple Lines phone service" >
+        <input type='number' name='MultipleLines_Yes' placeholder="MultipleLines_Yes">
+        <input type='number' name='InternetService_DSL' placeholder="Internet DSL">
+        <input type='number' name='InternetService_Fibre optic' placeholder="Inter Fibre optic">
+        <input type='number' name='InternetService_No' placeholder="No Internet">
+        <input type='number' name='OnlineSecurity_No' placeholder="No online Security">
+        <input type='number' name='OnlineSecurity_No internet service' placeholder="No secuirty with internet">
+        <input type='number' name='OnlineSecurity_Yes' placeholder="Online secuirity ">
+        <input type='number' name='OnlineBackup_No' placeholder="No Online backup">
+        <input type='number' name='OnlineBackup_No internet service' placeholder="internet service with no backup">
+        <input type='number' name='OnlineBackup_Yes' placeholder="Online Backup">
+        <input type='number' name='DeviceProtection_No' placeholder="No device protection">
+        <input type='number' name='DeviceProtection_No internet service' placeholder="no protection with service">
+        <input type='number' name='DeviceProtection_Yes' placeholder="Device Protection Yes">
+        <input type='number' name='TechSupport_No' placeholder="No tech support">
+        <input type='number' name='TechSupport_No internet service' placeholder="No tech support but have internet service">
+        <input type='number' name='TechSupport_Yes' placeholder="Full tech support">
+        <input type='number' name='StreamingTV_No' placeholder="No streaming service">
+        <input type='number' name='StreamingTV_No internet service' placeholder="No streaming wathced">
+        <input type='number' name='StreamingTV_Yes' placeholder="Yes stream watched">
+        <input type='number' name='StreamingMovies_No' placeholder="No movies">
+        <input type='number' name='StreamingMovies_No internet service' placeholder="No Movies with internet">
+        <input type='number' name='StreamingMovies_Yes' placeholder="Movies Watched">
+        <input type='number' name='Contract_Month-to-month' placeholder="Month to Month contract">
+        <input type='number' name='Contract_One year' placeholder="One Year Contract">
+        <input type='number' name='Contract_Two year' placeholder="Two Year Contract">
+        <input type='number' name='PaymentMethod_Bank transfer' placeholder="Bank transfer">
+        <input type='number' name='PaymentMethod_Credit card' placeholder="Credit card">
+        <input type='number' name='PaymentMethod_Electronic check' placeholder="E-check">
+        <input type='number' name='PaymentMethod_Mailed check' placeholder="Mailed-check">
+         <button type="submit">Predict</button>
+    </form>
+
+
+ <h2>{{prediction_text}}</h2>
+</body>
+</html>
